@@ -14,3 +14,9 @@ class Items(models.Model):
 	price = models.FloatField()
 	amount = models.IntegerField()
 
+class Orders(models.Model):
+      order_id = models.AutoField(primary_key=True)
+      user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+      item_id = models.ForeignKey(Items, on_delete=models.CASCADE)
+      date = models.DateTimeField()
+      amount = models.IntegerField()
