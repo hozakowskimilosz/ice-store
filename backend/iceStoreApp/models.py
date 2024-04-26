@@ -13,3 +13,4 @@ class Items(models.Model):
 	item_name = models.CharField(max_length=50)
 	price = models.FloatField()
 	amount = models.IntegerField()
+
