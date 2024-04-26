@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from django.http import HttpResponse
 from django.core import serializers
+from .models import Items
 import json
 
 class StoreItemsView(APIView):
@@ -23,4 +24,7 @@ class StoreItemsView(APIView):
             }
         }
         fake_items_implementation = json.dumps(sample_data, indent=4)
-        return HttpResponse(fake_items_implementation, 'application/json')
+
+        items = serializers.serialize('json', Items.objects.all())
+
+        return HttpResponse(items, 'application/json')
