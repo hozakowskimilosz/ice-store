@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FiCoffee } from "react-icons/fi";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="h-screen flex flex-col gap-4">
+      <div className="w-full bg-blue-500 h-[8rem] flex items-end text-5xl p-4 rounded-md font-semibold gap-3">
+        <h1>Ice Store</h1>
+        <FiCoffee />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <div className="border border-zinc-300 rounded-md w-48 p-4 h-[calc(100%-12rem)] flex flex-col gap-4">
+        <h1 className="font-bold text-xl">Store Dashboard</h1>
+
+        <ul className="flex flex-col gap-1">
+          <li>Products</li>
+          <li>Users</li>
+          <li>Crazy games</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
