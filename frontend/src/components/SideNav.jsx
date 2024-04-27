@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function SideNav() {
   return (
-    <div className="border border-zinc-300 rounded-md w-48 p-4 flex flex-col gap-4">
-      <h1 className="font-bold text-xl">Store Dashboard</h1>
+    <div className="flex w-48 flex-col gap-4 rounded-md border border-zinc-300 p-4">
+      <h1 className="text-xl font-bold">Store Dashboard</h1>
 
       <ul className="flex flex-col gap-1">
         <Link to="/products">Products</Link>
