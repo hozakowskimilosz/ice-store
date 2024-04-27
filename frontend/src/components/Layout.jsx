@@ -4,10 +4,10 @@ import SideNav from "./SideNav";
 
 export default function Layout() {
   return (
-    <div className="h-screen flex flex-col gap-4">
+    <div className="flex h-screen flex-col gap-4">
       <Header />
 
-      <div className="h-full flex">
+      <div className="flex h-full">
         <SideNav />
         <main>
           <Outlet />
