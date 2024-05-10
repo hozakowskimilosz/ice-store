@@ -18,7 +18,7 @@ export default function Header() {
       </Link>
 
       <div>
-        <Button onClick={toggleColorMode}>
+        <Button onClick={toggleColorMode} size="lg">
           {colorMode === "light" ? <FaMoon /> : <FaSun />}
         </Button>
       </div>
