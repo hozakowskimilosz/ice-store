@@ -16,7 +16,7 @@ class Items(models.Model):
 
 class Orders(models.Model):
       order_id = models.AutoField(primary_key=True)
-      user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
-      item_id = models.ForeignKey(Items, on_delete=models.CASCADE)
+      user = models.ForeignKey(Users, on_delete=models.CASCADE)
+      item = models.ForeignKey(Items, on_delete=models.CASCADE)
       date = models.DateTimeField()
       amount = models.IntegerField()
