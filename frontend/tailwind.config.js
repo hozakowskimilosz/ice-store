@@ -2,8 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      inter: ["Inter", "sans-serif"],
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        robotoCondensed: ["Roboto Condensed", "sans-serif"],
+      },
     },
   },
   plugins: [],
