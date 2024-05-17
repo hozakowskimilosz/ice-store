@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from iceStoreApp.views import StoreItemsView
+from iceStoreApp.views import StoreItemsView, GetItemsById
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('items/', StoreItemsView.as_view()),
+    path('items/<int:item_id>', GetItemsById.as_view()),
 ]
