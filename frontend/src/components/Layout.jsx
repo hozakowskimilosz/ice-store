@@ -4,15 +4,17 @@ import SideNav from "./SideNav";
 
 export default function Layout() {
   return (
-    <div className="font-roboto flex h-screen flex-col gap-4">
+    <div className="flex min-h-screen flex-col gap-4 font-roboto">
       <Header />
 
-      <div className="flex h-full">
+      <div className="flex">
         <SideNav />
 
-        <main>
-          <Outlet />
-        </main>
+        <div className="grow">
+          <main className="flex justify-center">
+            <Outlet />
+          </main>
+        </div>
       </div>
     </div>
   );

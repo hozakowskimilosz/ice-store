@@ -1,22 +1,37 @@
+import uuid
 from django.db import models
 
 class Users(models.Model):
-    user_id = models.AutoField(primary_key=True)
+    id = models.UUIDField( 
+        primary_key = True, 
+        default = uuid.uuid4, 
+        editable = False
+    ) 
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
+    password = models.CharField(max_length=50)
     adress = models.CharField(max_length=150)
     phone_num = models.IntegerField()
 
 class Items(models.Model):
-	item_id = models.AutoField(primary_key=True)
-	item_name = models.CharField(max_length=50)
-	price = models.FloatField()
-	amount = models.IntegerField()
+    id = models.UUIDField( 
+        primary_key = True, 
+        default = uuid.uuid4, 
+        editable = False
+    ) 
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=254)
+    price = models.FloatField()
+    amount = models.IntegerField()
 
 class Orders(models.Model):
-      order_id = models.AutoField(primary_key=True)
-      user = models.ForeignKey(Users, on_delete=models.CASCADE)
-      item = models.ForeignKey(Items, on_delete=models.CASCADE)
-      date = models.DateTimeField()
-      amount = models.IntegerField()
+    id = models.UUIDField( 
+        primary_key = True, 
+        default = uuid.uuid4, 
+        editable = False
+    ) 
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    item = models.ForeignKey(Items, on_delete=models.CASCADE)
+    date = models.DateTimeField()
+    amount = models.IntegerField()
