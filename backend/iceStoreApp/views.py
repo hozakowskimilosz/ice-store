@@ -13,3 +13,12 @@ class GetItemsById(APIView):
         item = Items.objects.filter(item_id=item_id)
         data = serializers.serialize('json', item)
         return HttpResponse(data, content_type="application/json")
+
+
+class Login(APIView):
+    def get(self, request, email, password):
+        try:
+            user = Users.objects.filter(email=email, password=password)
+        except:
+            return HttpResponse({'message': 'Invalid email or password'}, status=401)
+        return HttpResponse({'message': 'Logged in'}, status=200)
