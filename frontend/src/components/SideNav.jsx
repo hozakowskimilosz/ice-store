@@ -7,7 +7,7 @@ export default function SideNav() {
 
       <ul className="flex flex-col gap-1">
         <Link to="/products">Products</Link>
-        <li>Users</li>
+        <Link to="/login">Login</Link>
         <li>Crazy games</li>
       </ul>
     </div>
