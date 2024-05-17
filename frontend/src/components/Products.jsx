@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Product from "./Product";
+import { SimpleGrid } from "@chakra-ui/react";
 
 export default function Products() {
   const [items, setItems] = useState([]);
@@ -20,14 +22,11 @@ export default function Products() {
 
   return (
     <div>
-      <h1>Products:</h1>
-      <ul>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
         {items.map((item) => (
-          <li key={item.item_id}>
-            {item.item_name} - {item.price} zł
-          </li>
+          <Product key={item.item_id} item={item} />
         ))}
-      </ul>
+      </SimpleGrid>
     </div>
   );
 }
